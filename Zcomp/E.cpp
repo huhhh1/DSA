@@ -55,21 +55,41 @@ int A_pow_B(int a, int b)
     return res;
 }
 
+int calCulateForN(int l1, int r1, int l2, int r2)
+{
+    if (l1 > r2)
+    {
+        
+    }
+    else if ()
+    {
+
+    }
+    else if ()
+    {
+
+    }
+    else
+    {
+
+    }
+}
+
 void solve()
 {
-    int x, y, k;
-    cin >> x >> y >> k;
+    int k, l1, r1, l2, r2;
+    cin >> k >> l1 >> r1 >> l2 >> r2;
 
-    // if (x > y)
-    // {
-    //     cout << (2 * ((x + k - 1) / k)) - 1 << "\n";
-    // }
-    // else if (y > x)
-    // {
-    //     cout << 2 * ((y + k - 1) / k) << "\n";
-    // }
+    int res = 0;
 
-    cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << "\n";
+    for (int i = 0; i < log(1e9); i++)
+    {
+
+        int pow = A_pow_B(k, i);
+        res += (l1 / pow, r1 / pow, l2, p2);
+    }
+
+    return;
 }
 
 int32_t main()

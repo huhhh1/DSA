@@ -29,6 +29,7 @@ using ll = long long;
 #define endl "\n"
 #define INF 1e18
 #define int long long
+#include "Methods.cpp"
 
 bool comp(pair<int, int> a, pair<int, int> b)
 {
@@ -57,19 +58,7 @@ int A_pow_B(int a, int b)
 
 void solve()
 {
-    int x, y, k;
-    cin >> x >> y >> k;
-
-    // if (x > y)
-    // {
-    //     cout << (2 * ((x + k - 1) / k)) - 1 << "\n";
-    // }
-    // else if (y > x)
-    // {
-    //     cout << 2 * ((y + k - 1) / k) << "\n";
-    // }
-
-    cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << "\n";
+    pint();
 }
 
 int32_t main()

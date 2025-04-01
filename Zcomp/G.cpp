@@ -54,22 +54,53 @@ int A_pow_B(int a, int b)
     }
     return res;
 }
-
 void solve()
 {
-    int x, y, k;
-    cin >> x >> y >> k;
 
-    // if (x > y)
-    // {
-    //     cout << (2 * ((x + k - 1) / k)) - 1 << "\n";
-    // }
-    // else if (y > x)
-    // {
-    //     cout << 2 * ((y + k - 1) / k) << "\n";
-    // }
+    int n;
+    cin >> n;
 
-    cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << "\n";
+    string s = "";
+
+    auto it = [&](string str)
+    {
+        cout << "? " << str << endl;
+        cout.flush();
+
+        int res;
+        cin >> res;
+        return res == 1;
+    };
+
+    bool is = true;
+    while (n--)
+    {
+
+        if (is && it(s + '0'))
+        {
+            s.push_back('0');
+        }
+        else if (is && it(s + '1'))
+        {
+            s.push_back('1');
+        }
+        else
+        {
+            is = false;
+            if (it('0' + s))
+            {
+                s = '0' + s;
+            }
+            else
+            {
+                s = '1' + s;
+            }
+        }
+    }
+
+    cout << "! " << s << "\n";
+    cout.flush();
+    return;
 }
 
 int32_t main()

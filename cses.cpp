@@ -8,21 +8,22 @@ int32_t main()
     cin >> n;
     int arr[n];
     for (int &i : arr)
-    {
         cin >> i;
-    }
+    int i = 0;
+    int j = 0;
     int res = 0;
-    
-    sort(arr, arr + n);
-    int median = arr[n / 2];
-
-    for (int i = 0; i < n; i++)
+    map<int, int> mp;
+    while (j < n)
     {
-        res += abs(arr[i] - median);
+        mp[arr[j]]++;
+        while (mp[arr[j]] != 1)
+        {
+            mp[arr[i]]--;
+            i++;
+        }
+        res = max(res, j - i + 1);
+        j++;
     }
     cout << res << "\n";
-
     return 0;
 }
-
-// 1 2 2 3 5

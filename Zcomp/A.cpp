@@ -57,19 +57,37 @@ int A_pow_B(int a, int b)
 
 void solve()
 {
-    int x, y, k;
-    cin >> x >> y >> k;
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int &i : arr)
+        cin >> i;
 
-    // if (x > y)
-    // {
-    //     cout << (2 * ((x + k - 1) / k)) - 1 << "\n";
-    // }
-    // else if (y > x)
-    // {
-    //     cout << 2 * ((y + k - 1) / k) << "\n";
-    // }
+    int res = 0;
+    map<int, int> mp;
+    for (int i : it)
+        mp[i]++;
+    vector<pair<int, int>> brr;
+    for (auto it : mp)
+        brr.push_back(make_pair(it.first, it.second));
+    sort(brr.begin(), brr.end());
 
-    cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << "\n";
+    for (int i = n - 1; i >= 0; --i)
+    {
+        auto it = brr[i];
+        auto pt = i > 0 ? brr[i - 1] : make_pair(0, 0);
+        bool curr;
+        if (i > 0 && it.first - 1 == pt.first && it.first * it.second > pt.first * pt.second)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+
+    return;
 }
 
 int32_t main()
@@ -77,8 +95,7 @@ int32_t main()
     auto begin = std::chrono::high_resolution_clock::now();
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    int t;
-    cin >> t;
+    int t = 1;
     while (t--)
         solve();
     auto end = std::chrono::high_resolution_clock::now();

@@ -103,6 +103,7 @@ int Extract_Max(vector<int> &heap)
     MaxHeapify(heap);
     return max;
 }
+
 void increse(vector<int> &heap, int inde, int key)
 {
     if (heap[inde] < key && inde < heap.size())
@@ -116,7 +117,9 @@ void increse(vector<int> &heap, int inde, int key)
     }
     return;
 }
+
 void Decrease(vector<int> &heap, int index, int key){
+
     if (heap[index] > key && index >= 0)
     {
         heap[index] = key;

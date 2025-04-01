@@ -57,19 +57,21 @@ int A_pow_B(int a, int b)
 
 void solve()
 {
-    int x, y, k;
-    cin >> x >> y >> k;
+    string s;
+    cin >> s;
+    
+    reverse(s.begin(),s.end());
+    string res = "";
+    for (auto it : s)
+        if (it == 'q')
+            res += 'p';
+        else if (it == 'p')
+            res += 'q';
+        else
+            res += it;
 
-    // if (x > y)
-    // {
-    //     cout << (2 * ((x + k - 1) / k)) - 1 << "\n";
-    // }
-    // else if (y > x)
-    // {
-    //     cout << 2 * ((y + k - 1) / k) << "\n";
-    // }
-
-    cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << "\n";
+    cout << res << "\n";
+    return;
 }
 
 int32_t main()
@@ -77,10 +79,13 @@ int32_t main()
     auto begin = std::chrono::high_resolution_clock::now();
     ios_base::sync_with_stdio(0);
     cin.tie(0);
+
     int t;
     cin >> t;
+
     while (t--)
         solve();
+
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
     return 0;

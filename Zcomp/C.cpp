@@ -57,19 +57,51 @@ int A_pow_B(int a, int b)
 
 void solve()
 {
-    int x, y, k;
-    cin >> x >> y >> k;
+    int n, a, b, c;
+    cin >> n >> a >> b >> c;
+    int res = 0;
+    if (n <= a)
+    {
+        res += n;
+    }
+    else
+    {
+        int tmp = (n - a);
+        if (tmp <= c)
+        {
+            res += tmp;
+            c -= tmp;
+        }
+        else
+        {
+            res += c;
+            c = 0;
+        }
+        res += a;
+    }
 
-    // if (x > y)
-    // {
-    //     cout << (2 * ((x + k - 1) / k)) - 1 << "\n";
-    // }
-    // else if (y > x)
-    // {
-    //     cout << 2 * ((y + k - 1) / k) << "\n";
-    // }
+    if (n <= b)
+    {
+        res += n;
+    }
+    else
+    {
+        int tmp = (n - b);
+        if (tmp <= c)
+        {
+            res += tmp;
+            c -= tmp;
+        }
+        else
+        {
+            res += c;
+            c = 0;
+        }
+        res += b;
+    }
 
-    cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << "\n";
+    cout << res << "\n";
+    return;
 }
 
 int32_t main()
